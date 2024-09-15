@@ -1,0 +1,6 @@
+services:
+  make_fonts:
+    build: .
+    volumes:
+      - .:/work
+    tty: true

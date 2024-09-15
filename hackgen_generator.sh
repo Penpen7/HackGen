@@ -270,17 +270,17 @@ select_nerd_symbols="
   # Font Awesome Extension
   SelectMore(0ue200, 0ue2a9)
   # Weather Icons
-  SelectMore(0ue300, 0ue3e3)
+  SelectMore(0ue300, 0ue3eb)
   # Seti-UI + Custom
-  SelectMore(0ue5fa, 0ue6ac)
+  SelectMore(0ue5fa, 0ue6b5)
   # Devicons
   SelectMore(0ue700, 0ue7c5)
   # Codicons
   SelectMore(0uea60, 0uebeb)
   # Font Awesome
-  SelectMore(0uf000, 0uf2e0)
+  SelectMore(0uf000, 0uf2ff)
   # Font Logos
-  SelectMore(0uf300, 0uf32f)
+  SelectMore(0uf300, 0uf375)
   # Material Design
   SelectMore(0uf0001, 0uf1af0)
   # Other
