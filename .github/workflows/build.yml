@@ -1,0 +1,17 @@
+name: "Build Container Image"
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: docker compose build
+        run: docker compose build
+      - name: docker compose up
+        run: docker compose up
