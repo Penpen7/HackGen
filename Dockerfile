@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:22.04 AS build
 
 RUN apt-get update && apt-get -y --no-install-recommends install \
     ca-certificates \
@@ -13,5 +13,15 @@ RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py \
     && python2 get-pip.py \
     && pip2 install --no-cache-dir fonttools==3.44.0 \
     && rm -rf /pip2
+
+WORKDIR /work/bak
 WORKDIR /work
-ENTRYPOINT ["./make_hackgen.sh"]
+COPY *.sh /work
+COPY little_scripts /work/little_scripts
+COPY hinting_post_processing /work/hinting_post_processing
+# COPY source /work/source
+RUN --mount=type=bind,source=./source,target=/work/source \
+    /work/make_hackgen.sh
+
+FROM scratch AS output
+COPY --from=build /work/build /
